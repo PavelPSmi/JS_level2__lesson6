@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+    <div class="top">
+        <div class="header">
+            <div class="container">
+                <div class="header__nav">
+                    <div class="header__nav_menu">
+                        <div class="header__nav_menu_logo">
+                            <img src="./img/top/Лого.svg" alt="logo">
+                        </div>
+                        <!-- <form name="search" action="#" @submit.prevent="$root.filter">
+                            <input type="text" placeholder="Поиск" v-model="$root.userSearch"><button type="submit" class="search__button">Найти  <i class='fas fa-search'></i></button>
+                        </form> -->
+
+                        <!--Способ добавления в разметку элементов-->
+                        <search></search>
+                        <div class="basket__btn cart">
+                            <!-- <a class='basket__btn_a' href="#">Корзина</a>
+                            <div class="basket">
+                                <div>id</div>
+                                <div>Название</div>
+                                <div>Кол-во</div>
+                            </div> -->
+                                <button class="basket__btn" type="button" @click="showCart = !showCart">Корзина</button>
+                                    <cart :cart-items="cartItems"
+                                        :img="imgCart"
+                                        :visibility="showCart">
+                                    </cart>
+                        </div>            
+                    </div>
+                </div>
+
+                </div>
+            </div>
+        </div>
+    <main><div class="container">
+        <products class="goods-list" :products="filtered" :img="imgProduct" @add-product="addProduct"></products>
+        </div>
+    </main>
+    </div>
+
+</div>
+
+        
+    <script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js" integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    
+    
+    <script src="./JS__file/search.js"></script>
+    <!-- <script src="./JS__file/app.js"></script> -->
+    <script src="./JS__file/basket.js"></script>
+    <script src="./JS__file/list__product.js"></script>
+    <!-- <script src="./JS__file/ConstructorBurger.js"></script> -->
+</body>
+</html>
